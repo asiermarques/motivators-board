@@ -1,0 +1,16 @@
+# General settings of the Board.
+
+# Shown in the header and as the browser tab title.
+title: Motivators Board
+
+# Optional logo shown next to the title. Put the image file in the config folder (svg, png, jpg, jpeg, webp or gif)
+# and reference it by file name.
+# logo: logo.svg
+
+# Optional footer. Markdown is supported. Remove it to hide the footer.
+footer: |
+  Made with ☕ by [Asier Marqués](https://asiermarques.com) · [Source on GitHub](https://github.com/asiermarques/motivators-board) ·
+  Inspired by [Moving Motivators](https://management30.com/practice/moving-motivators/) from Management 3.0 
+
+# The Locale of the Titles, Descriptions and UI strings, e.g. "en". It is the Default locale of every Share link.
+locale: en

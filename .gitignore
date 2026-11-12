@@ -1,0 +1,12 @@
+node_modules
+.workflow
+dist
+coverage
+.DS_Store
+.idea
+.vscode
+*.local
+npm-debug.log*
+# The Adopter's configuration: only its README is upstream's.
+config/*
+!config/README.md

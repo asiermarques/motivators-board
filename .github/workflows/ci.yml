@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # The release workflow runs the same checks before it publishes.
+  workflow_call:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm test -- --run
+      - run: npm run build
+
+  # motivators-board installed as a dependency of an Adopter repository (docs/adr/0004): packs it, installs the
+  # tarball in an empty folder, scaffolds it with init and runs check and build there. The job above covers a clone.
+  adopter-repository:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm pack --pack-destination "$RUNNER_TEMP"
+      - name: Scaffold an Adopter repository and build it
+        working-directory: ${{ runner.temp }}
+        run: |
+          mkdir adopter && cd adopter
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund ../motivators-board-*.tgz
+          npx motivators-board init
+          test -f config/README.md && test -f config/settings.yml
+          npm run check
+          npm run build
+          test -f dist/index.html

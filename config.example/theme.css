@@ -1,0 +1,38 @@
+/*
+ * Styles of the Board, loaded after the base styles. Copy this file to your config folder and uncomment or add what
+ * you need: every rule here wins over the base styles. The custom properties below are the main ones the base styles
+ * use; docs/DESIGN.md in motivators-board lists them all.
+ *
+ * :root {
+ *   --color-text: #24221f;          text on the page (sumi ink)
+ *   --color-muted: #757068;
+ *   --color-background: #f3efe6;    the page (washi)
+ *   --color-surface: #fbf9f4;       the notices
+ *   --color-line: #d8d0c1;          hairlines: the name field, the notices
+ *   --color-link: #a83a26;
+ *   --color-focus: #24221f;
+ *   --color-board: #ebe5d8;         the sand the Cards lie on
+ *   --color-board-edge: #dcd3c3;    the hairline around it
+ *   --color-board-text: #6a645b;    the scale
+ *   --color-focus-board: #24221f;   the focus ring of a Card
+ *   --color-card: #fdfbf7;          the face of a Card
+ *   --color-card-text: #24221f;
+ *   --color-card-muted: #625c54;
+ *   --color-card-back: #2e3d52;     the back of a Card
+ *   --color-accent: #c0412a;        the main button
+ *   --color-seal: #c0412a;          the seals of the Summary, the most important end of the scale
+ *   --font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+ *   --font-display: "Shippori Mincho", Georgia, serif;
+ *   --radius-card: 4px;
+ *   --radius-board: 6px;
+ *   --radius-piece: 3px;
+ *   --board-width: 34rem;           the widest the Board gets; the Summary takes the rest
+ *   --card-gap: 0.625rem;           between two Cards
+ *   --fulfilment-offset: 1.75rem;   how far a Met Card sits to the right of the centre, and an Unmet one to the left
+ *   --color-met: #4f7342;           the full disc of a Met Card
+ *   --color-unmet: #625c54;         the empty ring of an Unmet Card
+ *   --texture-board: none;          a flat Board, without rake lines
+ * }
+ *
+ * Dark mode: redefine them inside @media (prefers-color-scheme: dark) { :root { … } }.
+ */
