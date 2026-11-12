@@ -49,6 +49,28 @@ languages impossible by construction.
 - **Follow-ups:** define the exact Markdown layout of a motivator file and document it in a motivators guide;
   `lang` is part of the share-link contract (ADR 0001, ADR 0004).
 
+## Amendment (2026-11-12): a single Locale in 1.x
+
+The first published version (1.1.0, the first one on npm) declares a single Locale, so a motivator file is flat. Its
+frontmatter holds `icon`, `colour` and `title`, and its body is the Description:
+
+```md
+---
+icon: autonomy.svg
+colour: "#6b4fa0"
+title: Autonomy
+---
+
+Freedom to make decisions about your work.
+```
+
+`settings.yml` declares that Locale with `locale: <locale>`. Declaring a second one is reported by `check`. `lang` is
+still written in the share URL, so links made with 1.x keep their language when several Locales arrive.
+
+The decision above still holds as the direction: one motivator file with all its translations, and a Locale selector.
+Moving the motivator file to that format changes the public contract, so it ships as a major version (2.0.0). The exact
+multi-locale layout is decided then.
+
 ## Links
 
 - ADR 0001 (share URL format), ADR 0004 (i18next as a dependency).

@@ -36,7 +36,7 @@ It uses the well-known mechanic of ranking motivator cards, with its own name, c
 
 The first release, 1.0.0, does the Board, the Share link and the Configuration in a single Locale. The Locale
 selector, sounds, the celebration, Snapshots and Reports, marked _(later)_ below, are not in it yet. 1.1.0 adds the
-Fulfilment of each motivator.
+Fulfilment of each motivator, and it is the first version published on npm (1.0.0 never was).
 
 - Deals every configured motivator on the board as a card. A new board, with no order in its link, deals the cards in
   a random order so the configuration order does not anchor the person.

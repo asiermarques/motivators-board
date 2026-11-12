@@ -4,7 +4,7 @@ motivators-board is a static, single-page app. There is no backend, no database 
 compiled into the bundle at build time and the person's board lives in the URL. It follows the architecture ([ADR 0004](adr/0004-stack-and-copy-adapt-from-progression-radar.md)).
 
 > Status: the first release (1.0.0) is implemented: the Board, the Share link, the Configuration with `check`, and the
-> `dev`, `build`, `preview`, `check` and `init` commands, in a single Locale. 1.1.0 adds Fulfilment (Met, Unmet). Snapshots, Reports, several Locales with
+> `dev`, `build`, `preview`, `check` and `init` commands, in a single Locale. 1.1.0 adds Fulfilment (Met, Unmet) and is the first version on npm. Snapshots, Reports, several Locales with
 > a selector, sounds and the celebration are not implemented yet; the parts of this document about them describe the
 > target design.
 
@@ -220,7 +220,7 @@ The package ships sources, not a bundle, because the configuration is compiled i
   package settings), so no token is stored and the provenance is generated automatically.
 
 ```sh
-git tag v1.0.0 && git push origin v1.0.0
+git tag v1.1.0 && git push origin v1.1.0
 ```
 
 ## Open questions

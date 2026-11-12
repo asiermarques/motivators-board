@@ -60,6 +60,16 @@ configuration.
 | `theme.css`            | CSS loaded after the base styles                                                  |
 | images                 | the svg, png, jpg, jpeg, webp or gif files that the settings and motivators use   |
 
+`settings.yml` accepts only these keys:
+
+```yaml
+title: Motivators Board          # the header and the browser tab title
+logo: logo.svg                   # optional, an image of the config folder
+footer: |                        # optional, Markdown
+  Made by [us](https://example.com)
+locale: en                       # the Locale of the titles, descriptions and UI strings
+```
+
 A motivator file is named after its key (`[a-z0-9-]+`), which is what the share link uses:
 
 ```md
@@ -70,6 +80,14 @@ title: Autonomy
 ---
 
 Freedom to make decisions about your work.
+```
+
+`i18n/<locale>.yml` overrides UI strings by their nested key, as named in
+[`src/strings.ts`](src/strings.ts). Only `en` is shipped, so any other Locale must translate every string:
+
+```yaml
+share:
+  copy: Copy the link
 ```
 
 Once `config/motivators/` exists it is the whole set: the sample motivators are not added to it. To read the
@@ -88,6 +106,13 @@ the details.
 
 Old or hand-edited links always open. Unknown keys and duplicates are dropped, missing motivators are added at the
 end, and a notice says what changed.
+
+## Public contract and versioning
+
+motivators-board follows [semver](https://semver.org) on its public contract. That contract is the commands and npm
+script names, the configuration files described above, and the share link format. `src/` is not part of it. A change
+to any of them that can break an Adopter repository is a major version. That includes several Locales per motivator
+file.
 
 ## Developing motivators-board
 
